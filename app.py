@@ -20,7 +20,6 @@ def close_redmine_issue(alertname, instance):
         res2 = requests.put(url, json=data, headers=headers)
         res2.raise_for_status()
 
-#---
 
 # Webhook受信での「resolved」判定
 @app.post("/webhook")
