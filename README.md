@@ -15,7 +15,9 @@ datetime</br>
 os</br>
 
 ### 注意！
-あくまでCloseさせるための追加部分です. このプログラム自体はチケットは作成しません.
+あくまでCloseさせるための追加部分です. 
+このプログラムは[redmine-ticket-creater](https://github.com/cdsl-research/redmine-ticket-creater)
+
 
 # 動作
 Alertmanagerからのアラートでチケット作成されます. ここでは実際にAlertmanagerからくるJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
