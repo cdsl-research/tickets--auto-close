@@ -56,6 +56,7 @@ c0117304@c0117304-test:~$ source venv/bin/activate
 ```
 
 ```shell
+#fastapi uvicorn requestsをインストール
 #仮想環境を有効した状態で実行してください
 
 c0117304@c0117304-test:~$ pip install fastapi uvicorn requests
@@ -90,7 +91,7 @@ INFO:     Started server process [4227]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
-以下のようになっていれば作動しています.</br>
+以上のようになっていれば作動しています.</br>
 # 動作
 Prometheusがアラートを検知すると, Alertmanagerからの情報でチケットが作成されます.<br>
 ここでは実際にAlertmanagerからくる情報をJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
