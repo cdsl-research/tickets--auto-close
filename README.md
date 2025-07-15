@@ -19,7 +19,7 @@ os</br>
 
 
 # 動作
-Alertmanagerからのアラートでチケット作成されます. ここでは実際にAlertmanagerからくるJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
+Alertmanagerからのアラートでチケットが作成されます. ここでは実際にAlertmanagerからくる情報をJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
 
 ![test1](https://github.com/user-attachments/assets/60727154-2e12-4a8c-89ef-4c6b3258912d)
 
