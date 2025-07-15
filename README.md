@@ -17,9 +17,9 @@ os</br>
 
 ## 準備
 以下のものをインストールしてください.</br>
-```shell
-#python3をインストール
 
+python3をインストール
+```shell
 c0117304@c0117304-test:~$ sudo apt install python3
 [sudo] password for c0117304:
 Reading package lists... Done
@@ -29,9 +29,9 @@ python3 is already the newest version (3.12.3-0ubuntu2).
 0 upgraded, 0 newly installed, 0 to remove and 75 not upgraded.
 c0117304@c0117304-test:~$
 ```
-```shell
-#venvをインストール
 
+venvをインストール
+```shell
 c0117304@c0117304-test:~$ sudo apt install python3-venv
 [sudo] password for c0117304:
 Reading package lists... Done
@@ -41,25 +41,21 @@ python3-venv is already the newest version (3.12.3-0ubuntu2).
 0 upgraded, 0 newly installed, 0 to remove and 86 not upgraded.
 c0117304@c0117304-test:~$
 ```
-
+仮想環境を作成(venvがあるディレクトリで実行してください)
 ```shell
-#仮想環境を作成(venvがあるディレクトリで実行してください)
-
 c0117304@c0117304-test:~$ python3 -m venv venv
 (venv)  c0117304@c0117304-test:~$
 ```
 
+仮想環境を有効化
 ```shell
-#仮想環境を有効化
-
 c0117304@c0117304-test:~$ source venv/bin/activate
 (venv)  c0117304@c0117304-test:~$
 ```
 
+fastapi uvicorn requestsをインストール</br>
+仮想環境を有効した状態で実行してください
 ```shell
-#fastapi uvicorn requestsをインストール
-#仮想環境を有効した状態で実行してください
-
 c0117304@c0117304-test:~$ pip install fastapi uvicorn requests
 Requirement already satisfied: fastapi in ./venv/lib/python3.12/site-packages (0.116.1)
 Requirement already satisfied: uvicorn in ./venv/lib/python3.12/site-packages (0.35.0)
@@ -81,9 +77,8 @@ Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.12/site-packag
 (venv) c0117304@c0117304-test:~$
 ```
 
+fastAPIを起動
 ```shell
-#fastAPIを起動
-
 c0117304@c0117304-test:~$ uvicorn app:app --reload --host 0.0.0.0 --port 5005
 INFO:     Will watch for changes in these directories: ['/home/c0117304/Alert-Ticket-Grouping']
 INFO:     Uvicorn running on http://0.0.0.0:5005 (Press CTRL+C to quit)
