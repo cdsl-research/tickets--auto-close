@@ -1,5 +1,5 @@
 # 概要
-Redmineでチケットを作成するソフトについて, Alertmanager APIに問い合わせて同名のアラートのチケットresolvedだった時にチケットをClose（完了）させる追加プログラムです.
+Redmineでチケットを作成するソフトについて, Alertmanager APIに問い合わせて同名のアラートのチケットresolvedだった時にチケットをClose（完了）させるプログラムです.
 
 ## 環境
 Python（3.12.3）</br>
@@ -8,18 +8,22 @@ Alertmanager （0.27.0）</br>
 Redmine（6.0.4）</br>
 
 ### Pythonライブラリ
-flask</br>
+fastAPI（0.116.1）</br>
 requests</br>
 json</br>
 datetime</br>
 os</br>
 
-### 注意！ 
-このプログラムは [redmine-ticket-creater](https://github.com/cdsl-research/redmine-ticket-creater) を元に作成している追加部分です.
-
+## 準備
+以下のものをインストールしてください.</br>
+・python3</br>
+・fastAPI</br>
+・uvicorn</br>
+・request</br>
 
 # 動作
-Alertmanagerからのアラートでチケットが作成されます. ここでは実際にAlertmanagerからくる情報をJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
+Prometheusがアラートを検知すると, Alertmanagerからの情報でチケットが作成されます.<br>
+ここでは実際にAlertmanagerからくる情報をJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
 
 ![test1](https://github.com/user-attachments/assets/60727154-2e12-4a8c-89ef-4c6b3258912d)
 
