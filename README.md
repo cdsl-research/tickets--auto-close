@@ -2,7 +2,7 @@
 既存のRedmine向けチケットソフトについて, Alertmanagerからresolvedを受け取ったら自動でチケットをClose（完了）させる追加プログラムです.
 
 ## 環境
-Python 3.12.3</br>
+Python（3.12.3）</br>
 Prometheus（2.53.1）</br>
 Alertmanager （0.27.0）</br>
 Redmine（6.0.4）</br>
