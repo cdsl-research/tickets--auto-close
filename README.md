@@ -17,7 +17,7 @@ os</br>
 ## 準備
 以下のものをインストールしてください.</br>
 ```shell
-#python3
+#python3をインストール
 
 c0117304@c0117304-test:~$ sudo apt install python3
 [sudo] password for c0117304:
@@ -29,7 +29,7 @@ python3 is already the newest version (3.12.3-0ubuntu2).
 c0117304@c0117304-test:~$
 ```
 ```shell
-#venv
+#venvをインストール
 
 c0117304@c0117304-test:~$ sudo apt install python3-venv
 [sudo] password for c0117304:
