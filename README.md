@@ -94,7 +94,7 @@ INFO:     Application startup complete.
 以上のようになっていれば作動しています.</br>
 # 動作
 Prometheusがアラートを検知すると, Alertmanagerからの情報でチケットが作成されます.<br>
-ここでは実際にAlertmanagerからくる情報をJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
+ここでは実際にAlertmanagerから来る情報を`curl`で直接送ってチケットを作成しています.
 
 ![test1](https://github.com/user-attachments/assets/60727154-2e12-4a8c-89ef-4c6b3258912d)
 
@@ -117,9 +117,9 @@ curl -X POST http://localhost:5005/webhook \
   ]
 }'
 ```
-チケットが作成されました.
-
-![test2](https://github.com/user-attachments/assets/934cfad5-9627-4a86-8359-e98ed7c9fa87)
+Redmineのプロジェクトページを開くとチケットが作成されたことが確認できます.
+<img width="1484" height="403" alt="スクリーンショット 2025-07-15 130232" src="https://github.com/user-attachments/assets/a2de6776-2b51-4126-9989-9dda2f271f14" />
+<img width="1457" height="453" alt="スクリーンショット 2025-07-15 130647" src="https://github.com/user-attachments/assets/5a6098b4-ddbf-48a2-b9ef-5d6b00c1086e" />
 
 同じようにresolvedになったことを擬似的に送ります.
 
