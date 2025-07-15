@@ -15,15 +15,73 @@ datetime</br>
 os</br>
 
 ## 準備
-Python3本体以外に以下のものを手動でインストールが必要です.</br>
-・venv</br>
-以下はvenvインストール後に有効化してからインストールしてください.
-・fastAPI</br>
-・requests</br>
-・uvicorn</br>
-
-以下のようになっていれば作動しています.</br>
+以下のものをインストールしてください.</br>
 ```shell
+#python3
+
+c0117304@c0117304-test:~$ sudo apt install python3
+[sudo] password for c0117304:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+python3 is already the newest version (3.12.3-0ubuntu2).
+0 upgraded, 0 newly installed, 0 to remove and 75 not upgraded.
+c0117304@c0117304-test:~$
+```
+```shell
+#venv
+
+c0117304@c0117304-test:~$ sudo apt install python3-venv
+[sudo] password for c0117304:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+python3-venv is already the newest version (3.12.3-0ubuntu2).
+0 upgraded, 0 newly installed, 0 to remove and 86 not upgraded.
+c0117304@c0117304-test:~$
+```
+
+```shell
+#仮想環境を作成(venvがあるディレクトリで実行してください)
+
+c0117304@c0117304-test:~$ python3 -m venv venv
+(venv)  c0117304@c0117304-test:~$
+```
+
+```shell
+#仮想環境を有効化
+
+c0117304@c0117304-test:~$ source venv/bin/activate
+(venv)  c0117304@c0117304-test:~$
+```
+
+```shell
+#仮想環境を有効した状態で実行してください
+
+c0117304@c0117304-test:~$ pip install fastapi uvicorn requests
+Requirement already satisfied: fastapi in ./venv/lib/python3.12/site-packages (0.116.1)
+Requirement already satisfied: uvicorn in ./venv/lib/python3.12/site-packages (0.35.0)
+Requirement already satisfied: requests in ./venv/lib/python3.12/site-packages (2.32.4)
+Requirement already satisfied: starlette<0.48.0,>=0.40.0 in ./venv/lib/python3.12/site-packages (from fastapi) (0.47.1)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 in ./venv/lib/python3.12/site-packages (from fastapi) (2.11.7)
+Requirement already satisfied: typing-extensions>=4.8.0 in ./venv/lib/python3.12/site-packages (from fastapi) (4.14.1)
+Requirement already satisfied: click>=7.0 in ./venv/lib/python3.12/site-packages (from uvicorn) (8.2.1)
+Requirement already satisfied: h11>=0.8 in ./venv/lib/python3.12/site-packages (from uvicorn) (0.16.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.12/site-packages (from requests) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.12/site-packages (from requests) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.12/site-packages (from requests) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.12/site-packages (from requests) (2025.7.9)
+Requirement already satisfied: annotated-types>=0.6.0 in ./venv/lib/python3.12/site-packages (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in ./venv/lib/python3.12/site-packages (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi) (2.33.2)
+Requirement already satisfied: typing-inspection>=0.4.0 in ./venv/lib/python3.12/site-packages (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi) (0.4.1)
+Requirement already satisfied: anyio<5,>=3.6.2 in ./venv/lib/python3.12/site-packages (from starlette<0.48.0,>=0.40.0->fastapi) (4.9.0)
+Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.12/site-packages (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi) (1.3.1)
+(venv) c0117304@c0117304-test:~$
+```
+
+```shell
+#fastAPIを起動
+
 c0117304@c0117304-test:~$ uvicorn app:app --reload --host 0.0.0.0 --port 5005
 INFO:     Will watch for changes in these directories: ['/home/c0117304/Alert-Ticket-Grouping']
 INFO:     Uvicorn running on http://0.0.0.0:5005 (Press CTRL+C to quit)
@@ -32,7 +90,7 @@ INFO:     Started server process [4227]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
-
+以下のようになっていれば作動しています.</br>
 # 動作
 Prometheusがアラートを検知すると, Alertmanagerからの情報でチケットが作成されます.<br>
 ここでは実際にAlertmanagerからくる情報をJSON形式を直接送ってアラートが来たことにしてテストで作成しています.
