@@ -21,8 +21,8 @@ def close_redmine_issue(alertname, instance):
         res2.raise_for_status()
 
 
-# Webhook受信での「resolved」判定
-@app.post("/webhook")
+# Alertmanager APIからの受信で「resolved」判定
+@app.post("/req_API")
 async def receive_alert(request: Request):
     data = await request.json()
     for alert in data.get("alerts", []):
