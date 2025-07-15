@@ -1,5 +1,5 @@
 # 概要
-Redmineでチケットを作成するソフトについて, Alertmanagerからresolvedを受け取ったら自動でチケットをClose（完了）させる追加プログラムです.
+Redmineでチケットを作成するソフトについて, Alertmanager APIに問い合わせて同名のアラートのチケットresolvedだった時にチケットをClose（完了）させる追加プログラムです.
 
 ## 環境
 Python（3.12.3）</br>
