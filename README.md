@@ -121,7 +121,8 @@ Redmineのプロジェクトページを開くとチケットが作成された�
 <img width="1484" height="403" alt="スクリーンショット 2025-07-15 130232" src="https://github.com/user-attachments/assets/a2de6776-2b51-4126-9989-9dda2f271f14" />
 <img width="1457" height="453" alt="スクリーンショット 2025-07-15 130647" src="https://github.com/user-attachments/assets/5a6098b4-ddbf-48a2-b9ef-5d6b00c1086e" />
 
-同じようにresolvedになったことを擬似的に送ります.
+先ほどのチケットがresolved状態になったとして, プログラムがAPIに問い合わせるとCloseされます.</br>
+↓ではそれを疑似的行っています.
 
 ![test3](https://github.com/user-attachments/assets/3938b3c6-d586-4c57-ac9e-eaedc4e02990)
 
