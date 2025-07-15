@@ -17,9 +17,21 @@ os</br>
 ## 準備
 Python3本体以外に以下のものを手動でインストールが必要です.</br>
 ・venv</br>
+以下はvenvインストール後に有効化してからインストールしてください.
 ・fastAPI</br>
 ・requests</br>
 ・uvicorn</br>
+
+以下のようになっていれば作動しています.</br>
+```shell
+c0117304@c0117304-test:~$ uvicorn app:app --reload --host 0.0.0.0 --port 5005
+INFO:     Will watch for changes in these directories: ['/home/c0117304/Alert-Ticket-Grouping']
+INFO:     Uvicorn running on http://0.0.0.0:5005 (Press CTRL+C to quit)
+INFO:     Started reloader process [4225] using StatReload
+INFO:     Started server process [4227]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
 
 # 動作
 Prometheusがアラートを検知すると, Alertmanagerからの情報でチケットが作成されます.<br>
