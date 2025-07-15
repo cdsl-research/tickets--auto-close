@@ -16,7 +16,7 @@ os</br>
 
 ### 注意！
 あくまでCloseさせるための追加部分です. 
-このプログラムは[redmine-ticket-creater](https://github.com/cdsl-research/redmine-ticket-creater)
+このプログラムは[redmine-ticket-creater](https://github.com/cdsl-research/redmine-ticket-creater) を元に作成しています.
 
 
 # 動作
