@@ -15,11 +15,11 @@ datetime</br>
 os</br>
 
 ## 準備
-以下のものをインストールしてください.</br>
-・python3</br>
+Python3本体以外に以下のものを手動でインストールが必要です.</br>
+・venv</br>
 ・fastAPI</br>
+・requests</br>
 ・uvicorn</br>
-・request</br>
 
 # 動作
 Prometheusがアラートを検知すると, Alertmanagerからの情報でチケットが作成されます.<br>
