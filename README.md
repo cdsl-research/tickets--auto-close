@@ -1,5 +1,6 @@
 # 概要
-Redmineでチケットを作成するソフトについて, Alertmanager APIに問い合わせて同名のアラートのチケットresolvedだった時にチケットをClose（完了）させるプログラムです.
+Prometheus, Alertmanagerで監視してるシステムにおいて, Redmine上にチケットを作成するプログラムです.</br>
+またAlertmanager APIに問い合わせて同名のアラートのチケットresolvedだった時にチケットをClose（完了）してくれます.
 
 ## 環境
 Python（3.12.3）</br>
