@@ -145,8 +145,7 @@ curl -X POST http://localhost:5005/webhook \
 }'
 ```
 無事Closeされました.
-
-![test4](https://github.com/user-attachments/assets/783117ba-4516-463a-a9b6-ffb4c1cd0001)
+<img width="1492" height="637" alt="スクリーンショット 2025-07-15 141352" src="https://github.com/user-attachments/assets/49049786-6d34-45e0-9f91-627e5ff474f4" />
 
 # 終わりに
 手作業でチケットをCloseさせる必要がなくなるので, 効率化のためによかったら使ってください.
