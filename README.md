@@ -14,9 +14,8 @@ json</br>
 datetime</br>
 os</br>
 
-### 注意！
-あくまでCloseさせるための追加部分です. 
-このプログラムは [redmine-ticket-creater](https://github.com/cdsl-research/redmine-ticket-creater) を元に作成しています.
+### 注意！ 
+このプログラムは [redmine-ticket-creater](https://github.com/cdsl-research/redmine-ticket-creater) を元に作成している追加部分です.
 
 
 # 動作
