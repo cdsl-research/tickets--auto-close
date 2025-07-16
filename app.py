@@ -4,13 +4,13 @@ from fastapi import FastAPI, Request
 import requests
 import os
 
-# --- 設定 ---
-REDMINE_URL = os.getenv("REDMINE_URL", "<redmine-URL>")
-API_KEY = os.getenv("REDMINE_API_KEY", "<YOUR_API_KEY>")
-PROJECT_ID = os.getenv("REDMINE_PROJECT_ID", "<project_ID>")
-TRACKER_ID = int(os.getenv("REDMINE_TRACKER_ID", 1))  # 1=Bug
-OPEN_STATUS_ID = int(os.getenv("REDMINE_OPEN_STATUS_ID", 1))    # 未着手
-CLOSE_STATUS_ID = int(os.getenv("REDMINE_CLOSE_STATUS_ID", 8))  # 完了
+# --- 設定はすべて環境変数で ---
+REDMINE_URL = os.getenv("REDMINE_URL")
+API_KEY = os.getenv("REDMINE_API_KEY")
+PROJECT_ID = os.getenv("REDMINE_PROJECT_ID")
+TRACKER_ID = int(os.getenv("REDMINE_TRACKER_ID"))  # 例: 1=Bug, 10=1次調査 など
+OPEN_STATUS_ID = int(os.getenv("REDMINE_OPEN_STATUS_ID"))    # 例: 1=未着手
+CLOSE_STATUS_ID = int(os.getenv("REDMINE_CLOSE_STATUS_ID"))  # 例: 8=完了
 
 app = FastAPI()
 
@@ -81,4 +81,3 @@ async def webhook(request: Request):
             else:
                 result.append({"no_open_issue": subject})
     return {"result": result}
-
