@@ -12,13 +12,27 @@ Redmine（6.0.4）</br>
 fastAPI（0.116.1）</br>
 requests</br>
 json</br>
-datetime</br>
 os</br>
 
+## ディレクトリ構成
+```shell-session
+c0117304@c0117304-test:~$s
+└─tickets-auto-close/
+  ├─app.py
+  └─venv
+```
+
 ## 準備
+環境変数の設定が必要です.</br>
+`redmine-URL`, `YOUR_API_KEY`, `project_ID`を各環境に合わせて変更してください.</br>
+・redmine-URL → <"redmineがあるIPアドレスorホスト名":"ポート番号"></br>
+・YOUR_API_KEY → redmineにログインし, 右上の個人設定を開くと右側に"APIアクセスキ"があります.</br>
+・project_ID → redmineでチケットを出力するプロジェクトの識別子をいれてください.</br>
+
 以下のものをインストールしてください.</br>
 
-python3をインストール
+python3を確認
+　UbuntuはPythonがあらかじめ入っていますが一応確認します
 ```shell
 c0117304@c0117304-test:~$ sudo apt install python3
 [sudo] password for c0117304:
@@ -32,31 +46,31 @@ c0117304@c0117304-test:~$
 
 venvをインストール
 ```shell
-c0117304@c0117304-test:~$ sudo apt install python3-venv
+c0117304@c0117304-test:~/tickets-auto-close$ sudo apt install python3-venv
 [sudo] password for c0117304:
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
 python3-venv is already the newest version (3.12.3-0ubuntu2).
 0 upgraded, 0 newly installed, 0 to remove and 86 not upgraded.
-c0117304@c0117304-test:~$
+c0117304@c0117304-test:~/tickets-auto-close$
 ```
 仮想環境を作成(venvがあるディレクトリで実行してください)
 ```shell
-c0117304@c0117304-test:~$ python3 -m venv venv
-(venv)  c0117304@c0117304-test:~$
+c0117304@c0117304-test:~/tickets-auto-close$ python3 -m venv venv
+(venv)  c0117304@c0117304-test:~/tickets-auto-close$
 ```
 
 仮想環境を有効化
 ```shell
-c0117304@c0117304-test:~$ source venv/bin/activate
-(venv)  c0117304@c0117304-test:~$
+c0117304@c0117304-test:~/tickets-auto-close$ source venv/bin/activate
+(venv)  c0117304@c0117304-test:~/tickets-auto-close$
 ```
 
 fastapi uvicorn requestsをインストール</br>
 仮想環境を有効した状態で実行してください
 ```shell
-c0117304@c0117304-test:~$ pip install fastapi uvicorn requests
+c0117304@c0117304-test:~/tickets-auto-close$ pip install fastapi uvicorn requests
 Requirement already satisfied: fastapi in ./venv/lib/python3.12/site-packages (0.116.1)
 Requirement already satisfied: uvicorn in ./venv/lib/python3.12/site-packages (0.35.0)
 Requirement already satisfied: requests in ./venv/lib/python3.12/site-packages (2.32.4)
@@ -74,12 +88,12 @@ Requirement already satisfied: pydantic-core==2.33.2 in ./venv/lib/python3.12/si
 Requirement already satisfied: typing-inspection>=0.4.0 in ./venv/lib/python3.12/site-packages (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi) (0.4.1)
 Requirement already satisfied: anyio<5,>=3.6.2 in ./venv/lib/python3.12/site-packages (from starlette<0.48.0,>=0.40.0->fastapi) (4.9.0)
 Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.12/site-packages (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi) (1.3.1)
-(venv) c0117304@c0117304-test:~$
+(venv) c0117304@c0117304-test:~/tickets-auto-close$
 ```
 
 fastAPIを起動
 ```shell
-c0117304@c0117304-test:~$ uvicorn app:app --reload --host 0.0.0.0 --port 5005
+c0117304@c0117304-test:~/tickets-auto-close$ uvicorn app:app --reload --host 0.0.0.0 --port 5005
 INFO:     Will watch for changes in these directories: ['/home/c0117304/Alert-Ticket-Grouping']
 INFO:     Uvicorn running on http://0.0.0.0:5005 (Press CTRL+C to quit)
 INFO:     Started reloader process [4225] using StatReload
