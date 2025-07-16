@@ -23,13 +23,13 @@ c0117304@c0117304-test:~$s
 ```
 
 ## 準備
-環境変数の設定が必要です.</br>
+・環境変数の設定が必要です.</br>
 `redmine-URL`, `YOUR_API_KEY`, `project_ID`を各環境に合わせて変更してください.</br>
-・redmine-URL → <"redmineがあるIPアドレスorホスト名":"ポート番号"></br>
-・YOUR_API_KEY → redmineにログインし, 右上の個人設定を開くと右側に"APIアクセスキ"があります.</br>
-・project_ID → redmineでチケットを出力するプロジェクトの識別子をいれてください.</br>
+　redmine-URL → <"redmineがあるIPアドレスorホスト名":"ポート番号"></br>
+　YOUR_API_KEY → redmineにログインし, 右上の個人設定を開くと右側に"APIアクセスキ"があります.</br>
+　project_ID → redmineでチケットを出力するプロジェクトの識別子をいれてください.</br>
 
-以下のものをインストールしてください.</br>
+・以下のものをインストールしてください.</br>
 
 python3を確認
 　UbuntuはPythonがあらかじめ入っていますが一応確認します
