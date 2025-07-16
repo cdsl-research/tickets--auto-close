@@ -88,17 +88,17 @@ REDMINE_URL, REDMINE_API_KEY, REDMINE_PROJECT_ID, REDMINE_TRACKER_ID, REDMINE_OP
 export REDMINE_URL="http://your-redmine-server:32300"
 export REDMINE_API_KEY="your_redmine_api_key"
 export REDMINE_PROJECT_ID="your_project_id"
-export REDMINE_TRACKER_ID="1"
-export REDMINE_OPEN_STATUS_ID="1"
-export REDMINE_CLOSE_STATUS_ID="8"
+export REDMINE_TRACKER_ID="project_tracker_id"
+export REDMINE_OPEN_STATUS_ID="open_status_id"
+export REDMINE_CLOSE_STATUS_ID="close_status_id"
 ```
 
 REDMINE_URL → <"redmineがあるIPアドレスorホスト名":"ポート番号"></br>
 REDMINE_API_KEY → redmineにログインし, 右上の個人設定を開くと右側に"APIアクセスキ"があります.</br>
 REDMINE_PROJECT_I → redmineでチケットを出力するプロジェクトの識別子をいれてください.</br>
-REDMINE_TRACKER_ID → 1（デフォルトの設定でBagに登録されます）.</br>
-REDMINE_OPEN_STATUS_ID → 1（未着手）
-REDMINE_CLOSE_STATUS_ID → 8（完了）
+REDMINE_TRACKER_ID → チケットトラッキングのどこに出力するか.デフォルトなら1でBugに登録されます.</br>
+REDMINE_OPEN_STATUS_ID → チケットが作成されたときのステータスID. 1なら未着手になります.
+REDMINE_CLOSE_STATUS_ID → チケットがResolvedされたときのステータスID. 8なら完了になります.
 
 fastAPIを起動
 ```shell
