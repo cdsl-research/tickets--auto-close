@@ -85,7 +85,7 @@ Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.12/site-packag
 REDMINE_URL, REDMINE_API_KEY, REDMINE_PROJECT_ID, REDMINE_TRACKER_ID, REDMINE_OPEN_STATUS_ID, REDMINE_CLOSE_STATUS_IDの環境変数を`export`で入力します.</br>
 
 ```shell
-export REDMINE_URL="http://your-redmine-server:32300"
+export REDMINE_URL="http://your-redmine-server:port_number"
 export REDMINE_API_KEY="your_redmine_api_key"
 export REDMINE_PROJECT_ID="your_project_id"
 export REDMINE_TRACKER_ID="project_tracker_id"
