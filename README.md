@@ -23,12 +23,6 @@ c0117304@c0117304-test:~$s
 ```
 
 ## 準備
-・環境変数の設定が必要です.</br>
-`redmine-URL`, `YOUR_API_KEY`, `project_ID`を各環境に合わせて変更してください.</br>
-　redmine-URL → <"redmineがあるIPアドレスorホスト名":"ポート番号"></br>
-　YOUR_API_KEY → redmineにログインし, 右上の個人設定を開くと右側に"APIアクセスキ"があります.</br>
-　project_ID → redmineでチケットを出力するプロジェクトの識別子をいれてください.</br>
-
 ・以下のものをインストールしてください.</br>
 
 python3を確認
@@ -90,6 +84,23 @@ Requirement already satisfied: anyio<5,>=3.6.2 in ./venv/lib/python3.12/site-pac
 Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.12/site-packages (from anyio<5,>=3.6.2->starlette<0.48.0,>=0.40.0->fastapi) (1.3.1)
 (venv) c0117304@c0117304-test:~/tickets-auto-close$
 ```
+REDMINE_URL, REDMINE_API_KEY, REDMINE_PROJECT_ID, REDMINE_TRACKER_ID, REDMINE_OPEN_STATUS_ID, REDMINE_CLOSE_STATUS_IDの環境変数を`export`で入力します.</br>
+
+```shell
+export REDMINE_URL="http://your-redmine-server:32300"
+export REDMINE_API_KEY="your_redmine_api_key"
+export REDMINE_PROJECT_ID="your_project_id"
+export REDMINE_TRACKER_ID="1"
+export REDMINE_OPEN_STATUS_ID="1"
+export REDMINE_CLOSE_STATUS_ID="8"
+```
+
+REDMINE_URL → <"redmineがあるIPアドレスorホスト名":"ポート番号"></br>
+REDMINE_API_KEY → redmineにログインし, 右上の個人設定を開くと右側に"APIアクセスキ"があります.</br>
+REDMINE_PROJECT_I → redmineでチケットを出力するプロジェクトの識別子をいれてください.</br>
+REDMINE_TRACKER_ID → 1（デフォルトの設定でBagに登録されます）.</br>
+REDMINE_OPEN_STATUS_ID → 1（未着手）
+REDMINE_CLOSE_STATUS_ID → 8（完了）
 
 fastAPIを起動
 ```shell
